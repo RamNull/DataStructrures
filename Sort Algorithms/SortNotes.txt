@@ -1,0 +1,10 @@
+﻿Sorting Stratagies:
+	1.enumaration sorting
+	2.exchange Sorting
+	3.selection sorting
+	4.insertion sorting
+	5.divide and conqre
+
+Sorting Algorithms:
+	1.Bubble Sort: it comes under exchange sort and serches in the array linearly it checks a[n] with a[n-1] if the order is wrong
+				   it rearranges the order and it repeats untill it gets sorted out the time complexity is O(n^2)

@@ -1,4 +1,5 @@
-﻿using DataStructures.Trees;
+﻿using DataStructures.Sort_Algorithms;
+using DataStructures.Trees;
 using System;
 using System.Collections.Generic;
 
@@ -12,17 +13,27 @@ namespace DataStructures
             Console.WriteLine("1: linked list");
             Console.WriteLine("2: search algos");
             Console.WriteLine("3: Binary Trees");
+            Console.WriteLine("4: Bubble Sort");
             int input = int.Parse(Console.ReadLine());
-            
+
             if (input == 1)
                 p.runLinkedList();
             else if (input == 2)
                 p.searchAlgos();
             else if (input == 3)
                 p.binarytrees();
+            else if (input == 4)
+                p.bubblesort();
             else
                 Console.WriteLine("The input povided is not valid");
 
+        }
+
+        public void bubblesort()
+        {
+            sortAlgorithms sort = new sortAlgorithms();
+            int[] unsortedArray = new int[] { 9, 8, 7, 6, 5, 4, 3, 2, 1 };
+            unsortedArray = sort.bubbleSort(unsortedArray);
         }
 
         public void runLinkedList()
