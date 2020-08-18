@@ -1,9 +1,9 @@
 ﻿Sorting Stratagies:
 	1.enumaration sorting
-	2.exchange Sorting
-	3.selection sorting
-	4.insertion sorting
-	5.divide and conqre
+	2.exchange Sorting : if 2 items are out of order exchange them repeat all the items till its sorted 
+	3.selection sorting : find the smallest item put it in the first position find the smallest item from the list and push it recursively
+	4.insertion sorting : take the item and insert it into empty data structure such that data structure cuntinues to sort at each stage 
+	5.divide and conqre : recursively split the problem in to smaller problem till you have trivial items to sort and then put togeter 
 
 Sorting Algorithms:
 	1.Bubble Sort: it comes under exchange sort and serches in the array linearly it checks a[n] with a[n-1] if the order is wrong

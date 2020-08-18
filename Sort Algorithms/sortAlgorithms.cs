@@ -24,17 +24,7 @@ namespace DataStructures.Sort_Algorithms
             return unsortedArray;
         }
 
-        public void test()
-        {
-            ICollection<int> sd = new List<int>();
-            sd.Add(2);
-            IEnumerable<int> ds = new List<int>();
-            IList<int> ls = new List<int>();
-            ls.Add(3);
-            
-
-        }
-
+        
         private int[] swap(int[] unsortedarray,int swapposition1,int swapposition2)
         {
             unsortedarray[swapposition1] = unsortedarray[swapposition1] + unsortedarray[swapposition2];
@@ -56,6 +46,80 @@ namespace DataStructures.Sort_Algorithms
         public List<int> heapSort(int[] unsortedArray)
         {
             return null;
+        }
+
+        public int[] insertionSortMethod1(int[] unsortedArray)
+        {
+            int length = unsortedArray.Length;
+            bool setvalue = false;
+            int[] sortedArray = new int[length];
+            for (int i = 0; i < length; i++)
+            {
+                int insertvalue = unsortedArray[i];
+                if (i == 0)
+                    sortedArray[i] = insertvalue;
+                else
+                    for (int j = 0; j < i; j++)
+                    {
+                        if (sortedArray[j] > insertvalue)
+                        {
+                            sortarray(sortedArray, j, insertvalue);
+                            break;
+                        }
+                        setvalue = true;
+                    }
+                if (setvalue == true)
+                    sortedArray[i + 1] = unsortedArray[i + 1];
+            }
+            return sortedArray;
+        }
+
+        public int[] insertionSort(int[] unsortedArray)
+        {
+            int length = unsortedArray.Length;
+            for (int i = 1; i < length; i++)
+            {
+                int validator = i;
+                int itemvalue = unsortedArray[validator];
+                while (validator>0 && itemvalue < unsortedArray[validator - 1])
+                    validator = validator - 1;
+                if(validator>=0)
+                    unsortedArray = sortarray(unsortedArray, i,validator, itemvalue);
+            }
+
+            return unsortedArray;
+        }
+
+        public int[] sortarray(int[] unsortedarray,int endposition,int replaceposition,int replacevalue)
+        {
+            if (replaceposition == endposition)
+            {
+                unsortedarray[replaceposition] = replacevalue;
+                return unsortedarray;
+            }
+               
+            else
+            {
+                int temp = unsortedarray[replaceposition];
+                unsortedarray[replaceposition] = replacevalue;
+                unsortedarray = sortarray(unsortedarray, endposition, replaceposition + 1, temp);
+                return unsortedarray;
+            }
+        }
+
+            public int[] sortarray(int[] sortedarray,int sortstartposition,int insertvalue)
+        {
+
+            int temp = sortedarray[sortstartposition];
+            sortedarray[sortstartposition] = insertvalue;
+            if (sortedarray[sortstartposition + 1] == 0)
+            {
+                sortedarray[sortstartposition + 1] = temp;
+                return sortedarray;
+            }
+                
+            sortedarray = sortarray(sortedarray, sortstartposition + 1, temp);
+            return sortedarray;
         }
 
 

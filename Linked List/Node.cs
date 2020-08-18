@@ -105,6 +105,11 @@ namespace DataStructures
             }
             prv.next = null;
         }
+
+        public void insertAtposition(int position)
+        {
+
+        }
       
     }
 }

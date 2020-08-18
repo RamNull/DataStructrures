@@ -14,6 +14,7 @@ namespace DataStructures
             Console.WriteLine("2: search algos");
             Console.WriteLine("3: Binary Trees");
             Console.WriteLine("4: Bubble Sort");
+            Console.WriteLine("5: insertion Sort");
             int input = int.Parse(Console.ReadLine());
 
             if (input == 1)
@@ -24,6 +25,10 @@ namespace DataStructures
                 p.binarytrees();
             else if (input == 4)
                 p.bubblesort();
+            else if (input == 5)
+                p.insertionSortMethod1();
+            else if (input == 6)
+                p.insertionSortMethod2();
             else
                 Console.WriteLine("The input povided is not valid");
 
@@ -34,6 +39,20 @@ namespace DataStructures
             sortAlgorithms sort = new sortAlgorithms();
             int[] unsortedArray = new int[] { 9, 8, 7, 6, 5, 4, 3, 2, 1 };
             unsortedArray = sort.bubbleSort(unsortedArray);
+        }
+
+        public void insertionSortMethod1()
+        {
+            sortAlgorithms sort = new sortAlgorithms();
+            int[] unsortedArray = new int[] { 9, 8, 7, 6, 5, 4, 3, 2, 1 };
+            unsortedArray = sort.insertionSortMethod1(unsortedArray);
+        }
+
+        public void insertionSortMethod2()
+        {
+            sortAlgorithms sort = new sortAlgorithms();
+            int[] unsortedArray = new int[] { 9, 8, 7, 6, 5, 4, 3, 2, 1 };
+            unsortedArray = sort.insertionSort(unsortedArray);
         }
 
         public void runLinkedList()
